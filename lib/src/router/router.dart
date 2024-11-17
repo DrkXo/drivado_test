@@ -1,5 +1,7 @@
 import 'package:drivado_test/src/common/widgets/scaffold_with_navigation.dart';
+import 'package:drivado_test/src/features/manage/domain/model/sub_company/company_model.dart';
 import 'package:drivado_test/src/features/manage/domain/model/users/user_model.dart';
+import 'package:drivado_test/src/features/manage/presentation/screens/company_details.dart';
 import 'package:drivado_test/src/features/manage/presentation/screens/manage_screen.dart';
 import 'package:drivado_test/src/features/manage/presentation/screens/user_details_screen.dart';
 import 'package:drivado_test/src/router/routes.dart';
@@ -45,6 +47,13 @@ class RouterService with ChangeNotifier {
                   name: Routes.user.name,
                   builder: (context, state) => UserDetailsScreen(
                     user: state.extra as UserModel,
+                  ),
+                ),
+                GoRoute(
+                  path: Routes.company.path,
+                  name: Routes.company.name,
+                  builder: (context, state) => CompanyDetailsScreen(
+                    company: state.extra as CompanyModel,
                   ),
                 ),
               ],

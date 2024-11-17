@@ -23,6 +23,7 @@ class _ScaffoldWithNavigationState extends State<ScaffoldWithNavigation> {
     return Scaffold(
       body: widget.navigationShell,
       floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
         onPressed: () {},
         child: const Icon(Icons.add),
       ),

@@ -44,7 +44,7 @@ class _UsersListWidgetState extends State<UsersListWidget>
                       extra: user,
                     );
                   },
-                  leading: const Icon(Icons.person),
+                  leading: const Icon(Icons.person_outline_outlined),
                   title: Text(user.name ?? 'Unknown Name !'),
                 );
               },

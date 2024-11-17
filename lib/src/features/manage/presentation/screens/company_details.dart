@@ -1,14 +1,14 @@
 import 'package:drivado_test/src/common/widgets/custom_app_bar.dart';
-import 'package:drivado_test/src/features/manage/domain/model/users/user_model.dart';
+import 'package:drivado_test/src/features/manage/domain/model/sub_company/company_model.dart';
 import 'package:flutter/material.dart';
 
-class UserDetailsScreen extends StatelessWidget {
-  const UserDetailsScreen({
+class CompanyDetailsScreen extends StatelessWidget {
+  const CompanyDetailsScreen({
     super.key,
-    required this.user,
+    required this.company,
   });
 
-  final UserModel user;
+  final CompanyModel company;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class UserDetailsScreen extends StatelessWidget {
                 children: [
                   ListTile(
                     title: Text(
-                      'User Details',
+                      'Company Details',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             color: Colors.black54,
                           ),
@@ -34,12 +34,13 @@ class UserDetailsScreen extends StatelessWidget {
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(user.isActive == false ? 'Active' : 'Deactive'),
+                        //Text(company.isActive == false ? 'Active' : 'Deactive'),
+                        Text('Deactive'),
                         Transform.scale(
                           scale: .6,
                           child: Switch.adaptive(
                             activeColor: Colors.green,
-                            value: user.isActive ?? false,
+                            value: true,
                             onChanged: (v) {},
                           ),
                         ),
@@ -52,10 +53,10 @@ class UserDetailsScreen extends StatelessWidget {
                   ListTile(
                     leading: CircleAvatar(),
                     title: Text(
-                      user.name ?? '',
+                      company.companyName ?? '',
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    subtitle: Text('User : ${user.email}'),
+                    subtitle: Text('${company.email}'),
                   ),
                   SizedBox(
                     height: 10,
@@ -78,7 +79,7 @@ class UserDetailsScreen extends StatelessWidget {
                               child: Transform.scale(
                                 scale: .8,
                                 child: Icon(
-                                  Icons.person_outline,
+                                  Icons.link_outlined,
                                   color: Colors.grey,
                                 ),
                               ),
@@ -86,13 +87,13 @@ class UserDetailsScreen extends StatelessWidget {
                             Container(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Name : ',
+                                'Website : ',
                               ),
                             ),
                             Container(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '${user.name}',
+                                '${company.companyName}',
                               ),
                             ),
                           ],
@@ -104,7 +105,7 @@ class UserDetailsScreen extends StatelessWidget {
                               child: Transform.scale(
                                 scale: .8,
                                 child: Icon(
-                                  Icons.email_outlined,
+                                  Icons.call_outlined,
                                   color: Colors.grey,
                                 ),
                               ),
@@ -112,13 +113,13 @@ class UserDetailsScreen extends StatelessWidget {
                             Container(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Email ID : ',
+                                'Mob. number : ',
                               ),
                             ),
                             Container(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '${user.email}',
+                                '${company.mobileNumber}',
                               ),
                             ),
                           ],
@@ -130,7 +131,7 @@ class UserDetailsScreen extends StatelessWidget {
                               child: Transform.scale(
                                 scale: .8,
                                 child: Icon(
-                                  Icons.phone_outlined,
+                                  Icons.local_atm_outlined,
                                   color: Colors.grey,
                                 ),
                               ),
@@ -138,13 +139,13 @@ class UserDetailsScreen extends StatelessWidget {
                             Container(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Mob. Number : ',
+                                'GST/VAT : ',
                               ),
                             ),
                             Container(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '${user.mobileNumber}',
+                                '${company.gstNum}',
                               ),
                             ),
                           ],
@@ -156,7 +157,7 @@ class UserDetailsScreen extends StatelessWidget {
                               child: Transform.scale(
                                 scale: .8,
                                 child: Icon(
-                                  Icons.language_outlined,
+                                  Icons.pin_drop_outlined,
                                   color: Colors.grey,
                                 ),
                               ),
@@ -164,39 +165,13 @@ class UserDetailsScreen extends StatelessWidget {
                             Container(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Language : ',
+                                'Adress : ',
                               ),
                             ),
                             Container(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                'English',
-                              ),
-                            ),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Transform.scale(
-                                scale: .8,
-                                child: Icon(
-                                  Icons.currency_bitcoin_outlined,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                'Currency : ',
-                              ),
-                            ),
-                            Container(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                '${user.currency}',
+                                '${company.address}',
                               ),
                             ),
                           ],
@@ -250,7 +225,7 @@ class UserDetailsScreen extends StatelessWidget {
                             Container(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '${user.currency} ${user.totalUnpaidBooking}',
+                                '${company.totalUnpaidBooking}',
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
@@ -273,7 +248,7 @@ class UserDetailsScreen extends StatelessWidget {
                             Container(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '${user.currency} ${user.availableLimit}',
+                                '${company.availableCreditLimit}',
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!

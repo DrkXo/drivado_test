@@ -1,7 +1,8 @@
 enum Routes {
   initial('initial', '/'),
   manage('manage', '/manage'),
-  user('user', '/user');
+  user('user', '/user'),
+  company('company', '/company');
 
   const Routes(this.name, this.path);
   final String name;

@@ -5,11 +5,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     this.actions,
+    this.bottomWidget,
     bool? reverse,
   }) : reverse = reverse ?? false;
 
   final bool reverse;
   final List<Widget>? actions;
+  final Widget? bottomWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           toolbarHeight: preferredSize.height,
           flexibleSpace: FlexibleSpaceBar(
             background: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,7 +59,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           toolbarHeight: preferredSize.height,
           flexibleSpace: FlexibleSpaceBar(
             background: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,

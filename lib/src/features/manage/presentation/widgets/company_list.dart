@@ -1,5 +1,7 @@
 import 'package:drivado_test/src/features/manage/data/company_repository.dart';
+import 'package:drivado_test/src/router/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class CompanyListWidget extends StatefulWidget {
@@ -37,7 +39,17 @@ class _CompanyListWidgetState extends State<CompanyListWidget>
                 final company = companyRepository.companies[index];
                 return ExpansionTile(
                   leading: const Icon(Icons.apartment),
-                  title: Text(company.companyName ?? 'Unknown Company Name !'),
+                  title: InkWell(
+                    onTap: () {
+                      GoRouter.of(context).pushNamed(
+                        Routes.company.name,
+                        extra: company,
+                      );
+                    },
+                    child: Text(
+                      company.companyName ?? 'Unknown Company Name !',
+                    ),
+                  ),
                   expandedCrossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(

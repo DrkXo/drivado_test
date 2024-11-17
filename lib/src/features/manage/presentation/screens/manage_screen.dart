@@ -1,8 +1,9 @@
 import 'package:drivado_test/src/common/widgets/custom_app_bar.dart';
-import 'package:drivado_test/src/features/manage/presentation/widgets/notification_widget.dart';
 import 'package:drivado_test/src/features/manage/data/company_repository.dart';
 import 'package:drivado_test/src/features/manage/data/users_repository.dart';
 import 'package:drivado_test/src/features/manage/presentation/controller/manage_screen_controller.dart';
+import 'package:drivado_test/src/features/manage/presentation/widgets/notification_widget.dart';
+import 'package:drivado_test/src/features/manage/presentation/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,6 +35,7 @@ class _ManageScreenState extends State<ManageScreen> {
           final tabController = DefaultTabController.of(context);
           return Scaffold(
             appBar: CustomAppBar(
+              bottomWidget: SearchBarWidget(),
               actions: [
                 NotificationWidget(),
               ],
@@ -42,16 +44,43 @@ class _ManageScreenState extends State<ManageScreen> {
               height: MediaQuery.of(context).size.height,
               child: Column(
                 children: [
-                  TabBar(
-                    controller: tabController,
-                    tabs: controller.tabBars,
+                  IntrinsicHeight(
+                    child: SearchBarWidget(),
                   ),
                   Expanded(
-                    child: TabBarView(
-                      controller: tabController,
-                      children: controller.tabViews,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: 10,
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            color: Colors.grey.withOpacity(.5),
+                            child: TabBar(
+                              controller: tabController,
+                              labelColor: Colors.black,
+                              unselectedLabelColor: Colors.black54,
+                              indicatorSize: TabBarIndicatorSize.tab,
+                              indicator: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  5,
+                                ),
+                                color: Colors.white30,
+                              ),
+                              tabs: controller.tabBars,
+                            ),
+                          ),
+                          Expanded(
+                            child: TabBarView(
+                              controller: tabController,
+                              children: controller.tabViews,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
