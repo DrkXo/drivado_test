@@ -41,6 +41,7 @@ dependencies:
   logger: ^2.4.0
   go_router: ^14.6.0
   collection: ^1.18.0
+  faker: ^2.2.0
 
 dev_dependencies:
   flutter_test:

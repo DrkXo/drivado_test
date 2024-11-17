@@ -1,8 +1,11 @@
 import 'package:drivado_test/src/features/manage/data/company_repository.dart';
 import 'package:drivado_test/src/router/routes.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+
+var faker = Faker();
 
 class CompanyListWidget extends StatefulWidget {
   const CompanyListWidget({super.key});
@@ -58,9 +61,40 @@ class _CompanyListWidgetState extends State<CompanyListWidget>
                         alignment: Alignment.centerLeft,
                         child: TextButton.icon(
                           onPressed: () {},
-                          icon: Icon(Icons.person_add),
-                          label: Text('Add User'),
+                          icon: Icon(
+                            Icons.person_add_outlined,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                          label: Text(
+                            'Add User',
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                          ),
                         ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ...List<int>.generate(5, (i) => i + 1)
+                              .map((x) => TextButton.icon(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.person_outline_outlined,
+                                      color: Colors.grey,
+                                    ),
+                                    label: Text(
+                                      faker.internet.email(),
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  )),
+                        ],
                       ),
                     ),
                   ],
