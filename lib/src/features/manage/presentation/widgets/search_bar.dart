@@ -19,7 +19,9 @@ class SearchBarWidget extends StatelessWidget {
               decoration: InputDecoration(
                 fillColor: Colors.white,
                 filled: true,
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 hintText: 'Search',
                 prefixIcon: Icon(
                   Icons.search_outlined,
@@ -28,11 +30,18 @@ class SearchBarWidget extends StatelessWidget {
               ),
             ),
           ),
-          MaterialButton(
-            onPressed: () {},
-            child: Icon(
-              Icons.tune_outlined,
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            decoration: BoxDecoration(
               color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: MaterialButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.tune_outlined,
+                //color: Colors.white,
+              ),
             ),
           ),
         ],

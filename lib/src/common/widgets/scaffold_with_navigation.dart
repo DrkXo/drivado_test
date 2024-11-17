@@ -38,6 +38,9 @@ class _ScaffoldWithNavigationState extends State<ScaffoldWithNavigation> {
           children: <Widget>[
             ...controller.bottomNavIcons
                 .mapIndexed((idx, ico) => MaterialButton(
+                      textColor: widget.navigationShell.currentIndex == idx
+                          ? Theme.of(context).primaryColor
+                          : Colors.grey,
                       onPressed: () {
                         widget.navigationShell.goBranch(
                           idx,
@@ -46,8 +49,12 @@ class _ScaffoldWithNavigationState extends State<ScaffoldWithNavigation> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(controller.bottomNavIcons[idx]),
-                          Text(controller.bottomNavText[idx]),
+                          Icon(
+                            controller.bottomNavIcons[idx],
+                          ),
+                          Text(
+                            controller.bottomNavText[idx],
+                          ),
                         ],
                       ),
                     )),

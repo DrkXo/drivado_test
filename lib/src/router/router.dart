@@ -35,25 +35,59 @@ class RouterService with ChangeNotifier {
           },
           branches: <StatefulShellBranch>[
             StatefulShellBranch(
-              navigatorKey: _shellNavigatorAKey,
+              routes: [
+                GoRoute(
+                  path: Routes.home.path,
+                  name: Routes.home.name,
+                  builder: (context, state) => Center(
+                    child: Text(Routes.home.name),
+                  ),
+                ),
+              ],
+            ),
+            StatefulShellBranch(
+              routes: [
+                GoRoute(
+                  path: Routes.bookings.path,
+                  name: Routes.bookings.name,
+                  builder: (context, state) => Center(
+                    child: Text(Routes.bookings.name),
+                  ),
+                ),
+              ],
+            ),
+            StatefulShellBranch(
               routes: [
                 GoRoute(
                   path: Routes.manage.path,
                   name: Routes.manage.name,
                   builder: (context, state) => const ManageScreen(),
+                  routes: [
+                    GoRoute(
+                      path: Routes.user.path,
+                      name: Routes.user.name,
+                      builder: (context, state) => UserDetailsScreen(
+                        user: state.extra as UserModel,
+                      ),
+                    ),
+                    GoRoute(
+                      path: Routes.company.path,
+                      name: Routes.company.name,
+                      builder: (context, state) => CompanyDetailsScreen(
+                        company: state.extra as CompanyModel,
+                      ),
+                    ),
+                  ],
                 ),
+              ],
+            ),
+            StatefulShellBranch(
+              routes: [
                 GoRoute(
-                  path: Routes.user.path,
-                  name: Routes.user.name,
-                  builder: (context, state) => UserDetailsScreen(
-                    user: state.extra as UserModel,
-                  ),
-                ),
-                GoRoute(
-                  path: Routes.company.path,
-                  name: Routes.company.name,
-                  builder: (context, state) => CompanyDetailsScreen(
-                    company: state.extra as CompanyModel,
+                  path: Routes.profile.path,
+                  name: Routes.profile.name,
+                  builder: (context, state) => Center(
+                    child: Text(Routes.profile.name),
                   ),
                 ),
               ],

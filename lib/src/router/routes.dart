@@ -1,6 +1,9 @@
 enum Routes {
   initial('initial', '/'),
+  home('home', '/home'),
+  bookings('bookings', '/bookings'),
   manage('manage', '/manage'),
+  profile('profile', '/profile'),
   user('user', '/user'),
   company('company', '/company');
 
