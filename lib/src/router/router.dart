@@ -17,6 +17,7 @@ class RouterService with ChangeNotifier {
 
   RouterService() {
     _router = GoRouter(
+      debugLogDiagnostics: true,
       initialLocation: Routes.manage.path,
       navigatorKey: _rootNavigatorKey,
       routes: <RouteBase>[

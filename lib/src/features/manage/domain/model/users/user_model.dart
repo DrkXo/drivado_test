@@ -109,3 +109,6 @@ class UserModel extends Equatable {
     ];
   }
 }
+
+
+
