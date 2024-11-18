@@ -13,7 +13,7 @@ class RouterService with ChangeNotifier {
 
   // private navigators
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
-  final _shellNavigatorAKey = GlobalKey<NavigatorState>(debugLabel: 'shellA');
+  // final _shellNavigatorAKey = GlobalKey<NavigatorState>(debugLabel: 'shellA');
 
   GoRouter get router => _router;
 
