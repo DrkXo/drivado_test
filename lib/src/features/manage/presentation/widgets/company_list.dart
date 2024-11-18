@@ -80,7 +80,7 @@ class _CompanyListWidgetState extends State<CompanyListWidget>
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ...List<int>.generate(5, (i) => i + 1)
+                          ...List<int>.generate(3, (i) => i + 1)
                               .map((x) => TextButton.icon(
                                     onPressed: () {},
                                     icon: Icon(

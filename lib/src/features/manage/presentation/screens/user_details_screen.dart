@@ -34,7 +34,7 @@ class UserDetailsScreen extends StatelessWidget {
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(user.isActive == false ? 'Active' : 'Deactive'),
+                        Text(user.isActive == false ? 'Active' : 'Deactivate'),
                         Transform.scale(
                           scale: .6,
                           child: Switch.adaptive(

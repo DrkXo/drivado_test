@@ -35,7 +35,7 @@ class CompanyDetailsScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         //Text(company.isActive == false ? 'Active' : 'Deactive'),
-                        Text('Deactive'),
+                        Text('Deactivate'),
                         Transform.scale(
                           scale: .6,
                           child: Switch.adaptive(
