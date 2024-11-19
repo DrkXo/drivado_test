@@ -1,9 +1,10 @@
+
 Notes:
 1.I have used Provider for state management.
-2.Some icons used in these project can be mismatched.
-3.In Given instruction there is no BottomNavigation in UserDetails or CompanyDetails page, But 
+2.Some icons used in this project can be mismatched.
+3.In Given instruction there is no BottomNavigation in UserDetails or CompanyDetails page, But
 In this scenario i have add these 2 screen under shell route so that it have clear indication
-of user navigation and maintain BottomNavigation.
+of user navigation and maintaining BottomNavigation.
 
 Full paths for routes:
            └─ (ShellRoute)
@@ -14,12 +15,13 @@ Full paths for routes:
              │ └─/manage/company (CompanyDetailsScreen)
              └─/profile (Center)
 
-As i have used go_router for routing management, it can be easily changed if needed.
-Initial Route is "/manage (ManageScreen)". 
+As I have used go_router for routing management, it can be easily changed if needed.
+Initial Route is "/manage (ManageScreen)".
 
 
 
 Hiccups:
-1. Api's not providing valid user or other avatar so i have left it blank.
-2. Company Api Not not providing Sub-Company user emails,So i have randomly generated using faker package.
+1. Api's not providing a valid user or other avatar so i have left it blank.
+2. Company Api Not providing Sub-Company user emails,So i have randomly generated using faker package.
 3. Company api not providing currency for "totalUnpaidBooking" and "availableCreditLimit"
+
