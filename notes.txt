@@ -3,7 +3,7 @@ Notes:
 2.Some icons used in these project can be mismatched.
 3.In Given instruction there is no BottomNavigation in UserDetails or CompanyDetails page, But 
 In this scenario i have add these 2 screen under shell route so that it have clear indication
-of user navigation.
+of user navigation and maintain BottomNavigation.
 
 Full paths for routes:
            └─ (ShellRoute)
@@ -20,6 +20,6 @@ Initial Route is "/manage (ManageScreen)".
 
 
 Hiccups:
-1. Api's not providing valid user or other avatar.
+1. Api's not providing valid user or other avatar so i have left it blank.
 2. Company Api Not not providing Sub-Company user emails,So i have randomly generated using faker package.
 3. Company api not providing currency for "totalUnpaidBooking" and "availableCreditLimit"
